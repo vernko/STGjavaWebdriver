@@ -46,7 +46,7 @@ public class challenge3 {
     }
 
     @Test()
-    public void testChallengeTwo() throws Exception {
+    public void testChallengeThree() throws Exception {
         driver.get("https://www.copart.com/");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
 
