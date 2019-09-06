@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f05f036-e238-434d-b9c2-0301cce139b1" name="Default Changelist" comment="" />
+    <list default="true" id="5f05f036-e238-434d-b9c2-0301cce139b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge1/challenge1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge1/challenge1.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.challenge2">
     <configuration name="C:/Users/Vern Kofford/Desktop/STGcert/src/test/xml/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="STGcert" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/xml/testing.xml" />
@@ -55,8 +58,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="challenge2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="STGcert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challenge2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="challenge2" />
+      <option name="MAIN_CLASS_NAME" value="challenge2.challenge2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.challenge2" />
         <item itemvalue="TestNG.C:/Users/Vern Kofford/Desktop/STGcert/src/test/xml/testing.xml" />
       </list>
     </recent_temporary>
@@ -79,7 +100,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
