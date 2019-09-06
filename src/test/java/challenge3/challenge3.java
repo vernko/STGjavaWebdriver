@@ -1,17 +1,17 @@
-package challenge2;
+package challenge3;
 
-import com.sun.glass.ui.Window;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 
-public class challenge2 {
+import java.util.List;
+
+public class challenge3 {
     public WebDriver driver;
     public WebDriverWait wait;
 
@@ -47,13 +47,13 @@ public class challenge2 {
 
     @Test()
     public void testChallengeTwo() throws Exception {
-        driver.get("https://www.copart.com");
+        driver.get("https://www.copart.com/");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
 
-        driver.findElement(By.id("input-search")).sendKeys("exotics" + Keys.ENTER);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("zip-code")));
+        List<WebElement> popularSearch = driver.findElements(By.cssSelector("li[ng-repeat*='popularSearch'] > a"));
 
-        WebElement porsche = (driver.findElement(By.id("serverSideDataTable")));
-        Assert.assertEquals(porsche.getText().contains("PORSCHE"), true);
+        for (WebElement model : popularSearch) {
+            System.out.println(model.getText() + " - " + model.getAttribute("href"));
+        }
     }
 }
