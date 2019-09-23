@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class challenge3 {
@@ -46,14 +48,32 @@ public class challenge3 {
     }
 
     @Test()
-    public void testChallengeThree() throws Exception {
-        driver.get("https://www.copart.com/");
+    public void goToCopart() throws Exception {
+        driver.get("https://www.copart.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
+    }
 
+/*    @Test()
+    public void printPopularSearch() throws Exception {
         List<WebElement> popularSearch = driver.findElements(By.cssSelector("li[ng-repeat*='popularSearch'] > a"));
 
         for (WebElement model : popularSearch) {
             System.out.println(model.getText() + " - " + model.getAttribute("href"));
         }
+    }*/
+
+    @Test()
+    public void printCategories() throws Exception {
+        /*List<WebElement> categoriesList = driver.findElements(By.cssSelector("ul[class*='tabs-left']"));*/
+        List<WebElement> categoriesList = driver.findElements(By.xpath("//*[@id=\"tabTrending\"]/div[3]/div[1]/ul/li > a"));
+        System.out.println("we got here");
+        for (WebElement e : categoriesList) {
+            System.out.println(e.getText() + " - " + e.getAttribute("href"));
+        }
+
+/*        Iterator<WebElement> categoriesListIterator = categoriesList.iterator();
+        while (categoriesListIterator.hasNext()) {
+            System.out.println(categoriesListIterator.next());
+        }*/
     }
 }

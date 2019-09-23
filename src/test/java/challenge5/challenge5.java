@@ -53,7 +53,7 @@ public class challenge5 {
         goToCopart();
         searchMakes();
         selectEntries();
-        printCountResults(getModelList());
+        printModelCount(getModelList());
     }
 
     public void goToCopart() throws Exception {
@@ -86,7 +86,7 @@ public class challenge5 {
         return models;
     }
 
-    public void printCountResults(List<String> models) throws Exception {
+    public void printModelCount(List<String> models) throws Exception {
         Map<String, Integer> map = new HashMap<>();
 
         for (String i : models) {
@@ -97,5 +97,84 @@ public class challenge5 {
         for (Map.Entry<String, Integer> model : map.entrySet()) {
             System.out.println("There are " + model.getValue() + " " + model.getKey() + " models");
         }
+    }
+
+    @Test()
+    public void countTypesOfDamages() throws Exception {
+        goToCopart();
+        searchMakes();
+        selectEntries();
+        printDamageCount(getDamageList());
+    }
+
+    public List<String> getDamageList() throws Exception {
+        List<String> damages = new ArrayList<String>();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("damage_desc")));
+        List<WebElement> damageList = driver.findElements(By.cssSelector("span[data-uname=\"lotsearchLotdamagedescription\"]"));
+
+        for (WebElement i : damageList) {
+            damages.add(i.getText());
+        }
+
+        return damages;
+    }
+
+    public void printDamageCount(List<String> damages) {
+        Map<String, Integer> results = new HashMap<>();
+        results.put("REAR END", 0);
+        results.put("FRONT END", 0);
+        results.put("MINOR DENT/SCRATCHES", 0);
+        results.put("UNDERCARRIAGE", 0);
+        results.put("MISC", 0);
+
+        for (String damage : damages) {
+            Integer count = results.get(damage);
+
+            switch (damage) {
+                case "REAR END":
+                    if (count == null) {
+                        results.put("REAR END", 1);
+                    }
+                    else {
+                        results.put("REAR END", count + 1);
+                    }
+                    break;
+                case "FRONT END":
+                    if (count == null) {
+                        results.put("FRONT END", 1);
+                    }
+                    else {
+                        results.put("FRONT END", count + 1);
+                    }
+                    break;
+                case "MINOR DENT/SCRATCHES":
+                    if (count == null) {
+                        results.put("MINOR DENT/SCRATCHES", 1);
+                    }
+                    else {
+                        results.put("MINOR DENT/SCRATCHES", count + 1);
+                    }
+                    break;
+                case "UNDERCARRIAGE":
+                    if (count == null) {
+                        results.put("UNDERCARRIAGE", 1);
+                    }
+                    else {
+                        results.put("UNDERCARRIAGE", count + 1);
+                    }
+                    break;
+                default:
+                    if (results.get("MISC") == null) {
+                        results.put("MISC", 1);
+                    }
+                    else {
+                        results.put("MISC", results.get("MISC") + 1);
+                    }
+                    break;
+            }
+        }
+
+        System.out.println(results);
     }
 }

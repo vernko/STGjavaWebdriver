@@ -21,7 +21,7 @@ public class challenge2 {
 
     @AfterSuite
     public void stopSuite() throws Exception {
-        System.out.println("All done!!!");
+        System.out.println("Thanks for validating that Porsche exists in Exotics!!!");
     }
 
     @BeforeClass
@@ -46,13 +46,19 @@ public class challenge2 {
     }
 
     @Test()
-    public void testChallengeTwo() throws Exception {
+    public void goToCopart() throws Exception {
         driver.get("https://www.copart.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
+    }
 
+    @Test()
+    public void searchExotics() throws Exception {
         driver.findElement(By.id("input-search")).sendKeys("exotics" + Keys.ENTER);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("zip-code")));
+    }
 
+    @Test()
+    public void verifyPorscheInList() throws Exception {
         WebElement porsche = (driver.findElement(By.id("serverSideDataTable")));
         Assert.assertEquals(porsche.getText().contains("PORSCHE"), true);
     }
