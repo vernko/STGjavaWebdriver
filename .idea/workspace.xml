@@ -7,11 +7,8 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/xml/testing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/xml/testing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge1/challenge1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge1/challenge1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,17 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.challenge5">
-    <configuration name="C:/Users/Vern Kofford/Desktop/STGcert/src/test/xml/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="STGcert" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/xml/testing.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.challenge6">
     <configuration name="challenge2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="STGcert" />
       <extension name="coverage">
@@ -122,12 +109,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="challenge6" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="STGcert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challenge6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="challenge6" />
+      <option name="MAIN_CLASS_NAME" value="challenge6.challenge6" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="challenge6.verifySkylineExists" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="STGcert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challenge6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="challenge6" />
+      <option name="MAIN_CLASS_NAME" value="challenge6.challenge6" />
+      <option name="METHOD_NAME" value="verifySkylineExists" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.challenge5" />
+        <item itemvalue="TestNG.challenge6" />
+        <item itemvalue="TestNG.challenge6.verifySkylineExists" />
         <item itemvalue="TestNG.challenge2" />
+        <item itemvalue="TestNG.challenge5" />
         <item itemvalue="TestNG.challenge3" />
-        <item itemvalue="TestNG.C:/Users/Vern Kofford/Desktop/STGcert/src/test/xml/testing.xml" />
       </list>
     </recent_temporary>
   </component>

@@ -51,7 +51,7 @@ public class challenge5 {
     @Test()
     public void countTypesOfPorscheModels() throws Exception {
         goToCopart();
-        searchMakes();
+        searchMakes("porsche");
         selectEntries();
         printModelCount(getModelList());
     }
@@ -61,8 +61,8 @@ public class challenge5 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    public void searchMakes() throws Exception {
-        driver.findElement(By.id("input-search")).sendKeys("porsche");
+    public void searchMakes(String make) throws Exception {
+        driver.findElement(By.id("input-search")).sendKeys(make);
         driver.findElement(By.cssSelector("[ng-click=\"search()\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("serverSideDataTable")));
     }
@@ -102,7 +102,7 @@ public class challenge5 {
     @Test()
     public void countTypesOfDamages() throws Exception {
         goToCopart();
-        searchMakes();
+        searchMakes("porsche");
         selectEntries();
         printDamageCount(getDamageList());
     }

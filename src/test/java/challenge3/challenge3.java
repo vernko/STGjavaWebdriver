@@ -53,14 +53,14 @@ public class challenge3 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-/*    @Test()
+    @Test()
     public void printPopularSearch() throws Exception {
-        List<WebElement> popularSearch = driver.findElements(By.cssSelector("li[ng-repeat*='popularSearch'] > a"));
+        List<WebElement> popularSearch = driver.findElements(By.cssSelector("li[ng-repeat*=\"popularSearch\"] > a"));
 
         for (WebElement model : popularSearch) {
             System.out.println(model.getText() + " - " + model.getAttribute("href"));
         }
-    }*/
+    }
 
     @Test()
     public void printCategories() throws Exception {

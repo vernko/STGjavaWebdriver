@@ -46,18 +46,22 @@ public class challenge2 {
     }
 
     @Test()
+    public void verifySearchExists() throws Exception {
+        goToCopart();
+        searchExotics("exotics");
+        verifyPorscheInList();
+    }
+
     public void goToCopart() throws Exception {
         driver.get("https://www.copart.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    @Test()
-    public void searchExotics() throws Exception {
-        driver.findElement(By.id("input-search")).sendKeys("exotics" + Keys.ENTER);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("zip-code")));
+    public void searchExotics(String search) throws Exception {
+        driver.findElement(By.id("input-search")).sendKeys(search + Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("serverSideDataTable")));
     }
 
-    @Test()
     public void verifyPorscheInList() throws Exception {
         WebElement porsche = (driver.findElement(By.id("serverSideDataTable")));
         Assert.assertEquals(porsche.getText().contains("PORSCHE"), true);
