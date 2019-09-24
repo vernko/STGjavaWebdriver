@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5f05f036-e238-434d-b9c2-0301cce139b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/challenge6/challenge6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge6/challenge6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/screenShots/seleniumError1569354112655.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/challenge6/challenge6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge6/challenge6.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +41,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vern Kofford\Desktop\STGcert\src\test\java\challenge6" />
       <recent name="C:\Users\Vern Kofford\Desktop\STGcert\Binaries" />
     </key>
   </component>

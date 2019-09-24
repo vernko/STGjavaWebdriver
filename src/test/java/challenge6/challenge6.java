@@ -1,5 +1,6 @@
 package challenge6;
 
+import com.sun.xml.internal.ws.util.StringUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -46,7 +47,7 @@ public class challenge6 {
     }
 
     @Test()
-    public void verifySkylineExists() throws Exception {
+    public void verifyMakeExists() throws Exception {
         goToCopart();
         searchMakes("nissan");
         openModelFilter();
@@ -69,20 +70,21 @@ public class challenge6 {
         driver.findElement(By.cssSelector("[data-uname=\"ModelFilter\"]")).click();
     }
 
-    public void searchModelWithFilter(String model) throws Exception {
+    public void searchModelWithFilter(String modelSearch) throws Exception {
         try
         {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("collapseinside4")));
-            driver.findElement(By.cssSelector("#collapseinside4 input[type=\"text\"]")).sendKeys(model);
+            driver.findElement(By.cssSelector("#collapseinside4 input[type=\"text\"]")).sendKeys(modelSearch);
+
 
             WebElement abbrTitle = driver.findElement(By.cssSelector("abbr[title*=\"Skyline\"]"));
-            String skyline = abbrTitle.getText();
-            Assert.assertTrue(skyline.contains("Skyline"), skyline);
-            System.out.println("A Skyline exists on Copart");
+            String model = abbrTitle.getText();
+            Assert.assertTrue(model.contains(StringUtils.capitalize(modelSearch)), model);
+            System.out.println("A " + StringUtils.capitalize(modelSearch) + " exists on Copart");
         }
         catch (Exception e) {
-            System.out.println("There are no skylines");
-            takeScreenshot(driver, "C:\\Users\\Vern Kofford\\Desktop\\STGcert\\src\\test\\screenShots\\seleniumError"+System.currentTimeMillis()+".png");
+            System.out.println("There were no " + StringUtils.capitalize(modelSearch) + "s. Check out the screenshot!");
+            takeScreenshot(driver, "C:\\Users\\Vern Kofford\\Desktop\\STGcert\\src\\test\\java\\challenge6\\screenShots\\seleniumError"+System.currentTimeMillis()+".png");
         }
     }
 
