@@ -1,5 +1,6 @@
 package challenge6;
 
+import challenge2.challenge2;
 import com.sun.xml.internal.ws.util.StringUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -40,6 +41,7 @@ public class challenge6 {
 
     @BeforeMethod()
     public void beforeMethod() throws Exception {
+        goToCopart();
     }
 
     @AfterMethod()
@@ -48,19 +50,18 @@ public class challenge6 {
 
     @Test()
     public void verifyMakeExists() throws Exception {
-        goToCopart();
-        searchMakes("nissan");
+        searchCopart("nissan");
         openModelFilter();
         searchModelWithFilter("skyline");
     }
 
-    public void goToCopart() {
+    public void goToCopart() throws Exception {
         driver.get("https://www.copart.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    public void searchMakes(String makes) {
-        driver.findElement(By.id("input-search")).sendKeys(makes);
+    public void searchCopart(String searchItem) throws Exception {
+        driver.findElement(By.id("input-search")).sendKeys(searchItem);
         driver.findElement(By.cssSelector("[ng-click=\"search()\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("serverSideDataTable")));
     }

@@ -1,6 +1,5 @@
 package challenge2;
 
-import com.sun.glass.ui.Window;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -39,6 +38,7 @@ public class challenge2 {
 
     @BeforeMethod()
     public void beforeMethod() throws Exception {
+        goToCopart();
     }
 
     @AfterMethod()
@@ -47,8 +47,7 @@ public class challenge2 {
 
     @Test()
     public void verifySearchExists() throws Exception {
-        goToCopart();
-        searchExotics("exotics");
+        searchCopart("exotics");
         verifyPorscheInList();
     }
 
@@ -57,8 +56,9 @@ public class challenge2 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    public void searchExotics(String search) throws Exception {
-        driver.findElement(By.id("input-search")).sendKeys(search + Keys.ENTER);
+    public void searchCopart(String searchItem) throws Exception {
+        driver.findElement(By.id("input-search")).sendKeys(searchItem);
+        driver.findElement(By.cssSelector("[ng-click=\"search()\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("serverSideDataTable")));
     }
 

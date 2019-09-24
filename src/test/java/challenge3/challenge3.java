@@ -1,11 +1,10 @@
 package challenge3;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 
@@ -41,6 +40,7 @@ public class challenge3 {
 
     @BeforeMethod()
     public void beforeMethod() throws Exception {
+        goToCopart();
     }
 
     @AfterMethod()
@@ -48,25 +48,38 @@ public class challenge3 {
     }
 
     @Test()
+    public void printPopularItemsA() throws Exception {
+        printMakesModels(getListOfMakesModels());
+    }
+
+//    @Test()
+//    public void printPopularItemsB() throws Exception {
+//        printCategories(getListOfCategories());
+//    }
+
     public void goToCopart() throws Exception {
         driver.get("https://www.copart.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    @Test()
-    public void printPopularSearch() throws Exception {
+    public List<WebElement> getListOfMakesModels() throws Exception {
         List<WebElement> popularSearch = driver.findElements(By.cssSelector("li[ng-repeat*=\"popularSearch\"] > a"));
+        return popularSearch;
+    }
 
+    public void printMakesModels(List<WebElement> popularSearch) throws Exception {
         for (WebElement model : popularSearch) {
             System.out.println(model.getText() + " - " + model.getAttribute("href"));
         }
     }
 
-    @Test()
-    public void printCategories() throws Exception {
+    public List<WebElement> getListOfCategories() throws Exception {
         /*List<WebElement> categoriesList = driver.findElements(By.cssSelector("ul[class*='tabs-left']"));*/
         List<WebElement> categoriesList = driver.findElements(By.xpath("//*[@id=\"tabTrending\"]/div[3]/div[1]/ul/li > a"));
-        System.out.println("we got here");
+        return categoriesList;
+    }
+
+    public void printCategories(List<WebElement> categoriesList) throws Exception {
         for (WebElement e : categoriesList) {
             System.out.println(e.getText() + " - " + e.getAttribute("href"));
         }

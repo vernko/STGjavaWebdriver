@@ -1,6 +1,8 @@
 package challenge5;
 
+import challenge2.challenge2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,6 +44,7 @@ public class challenge5 {
 
     @BeforeMethod()
     public void beforeMethod() throws Exception {
+        goToCopart();
     }
 
     @AfterMethod()
@@ -50,8 +53,7 @@ public class challenge5 {
 
     @Test()
     public void countTypesOfPorscheModels() throws Exception {
-        goToCopart();
-        searchMakes("porsche");
+        searchCopart("porsche");
         selectEntries();
         printModelCount(getModelList());
     }
@@ -61,8 +63,8 @@ public class challenge5 {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("input-search")));
     }
 
-    public void searchMakes(String make) throws Exception {
-        driver.findElement(By.id("input-search")).sendKeys(make);
+    public void searchCopart(String searchItem) throws Exception {
+        driver.findElement(By.id("input-search")).sendKeys(searchItem);
         driver.findElement(By.cssSelector("[ng-click=\"search()\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("serverSideDataTable")));
     }
@@ -101,8 +103,7 @@ public class challenge5 {
 
     @Test()
     public void countTypesOfDamages() throws Exception {
-        goToCopart();
-        searchMakes("porsche");
+        searchCopart("porsche");
         selectEntries();
         printDamageCount(getDamageList());
     }
