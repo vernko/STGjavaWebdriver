@@ -129,18 +129,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="challenge6.verifySkylineExists" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="challenge7" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="STGcert" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="challenge6.*" />
+          <option name="PATTERN" value="challenge7.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="challenge6" />
-      <option name="MAIN_CLASS_NAME" value="challenge6.challenge6" />
-      <option name="METHOD_NAME" value="verifySkylineExists" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PACKAGE_NAME" value="challenge7" />
+      <option name="MAIN_CLASS_NAME" value="challenge7.challenge7" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -150,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.challenge6" />
-        <item itemvalue="TestNG.challenge3" />
         <item itemvalue="TestNG.challenge5" />
-        <item itemvalue="TestNG.challenge6.verifySkylineExists" />
+        <item itemvalue="TestNG.challenge3" />
         <item itemvalue="TestNG.challenge2" />
+        <item itemvalue="TestNG.challenge7" />
       </list>
     </recent_temporary>
   </component>
