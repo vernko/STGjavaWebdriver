@@ -11,7 +11,6 @@ public class challenge2 extends BaseTests {
         System.out.println("Thanks for validating that Porsche exists in Exotics!!!");
     }
 
-
     @Test()
     public void verifySearchExistsOnResultsPage() {
         SearchResultsPage searchResultsPage = homePage.searchCopart("exotics");

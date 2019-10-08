@@ -18,7 +18,7 @@ public class SearchResultsPage {
     private WebDriverWait wait;
 
     public By searchField = By.id("input-search");
-    public By serverSideDataTable = By.id("serverSideDataTable");
+    public By tableBody = By.cssSelector("table#serverSideDataTable tbody");
     public By damageOrder = By.id("damage_desc");
     public By damageDescription = By.cssSelector("span[data-uname=\"lotsearchLotdamagedescription\"]");
     public By lotSearchModel = By.cssSelector("span[data-uname=\"lotsearchLotmodel\"]");
@@ -49,8 +49,8 @@ public class SearchResultsPage {
     }
 
     public String getModelInList() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(serverSideDataTable));
-        return driver.findElement(serverSideDataTable).getText();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(tableBody));
+        return driver.findElement(tableBody).getText();
     }
 
     public List<String> getListOfModels() throws Exception {

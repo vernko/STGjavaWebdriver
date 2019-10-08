@@ -2,12 +2,17 @@ package pages;
 
 import com.sun.xml.internal.ws.util.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.TakeScreenshots;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class HomePage {
     private WebDriver driver;
@@ -18,10 +23,12 @@ public class HomePage {
     private By tableContainer = By.id("serverSideDataTable");
     private By lotSearchModel = By.cssSelector("span[data-uname=\"lotsearchLotmodel\"]");
     private By popularModelList = By.cssSelector("li[ng-repeat*=\"popularSearch\"] > a");
+    private By popularCategoryList = By.xpath("//div[@id=\"tabTrending\"]/div/div/ul/li/a");
 
     public HomePage(WebDriver driver, WebDriverWait wait){
         this.driver = driver;
         this.wait = wait;
+
     }
 
     public SearchResultsPage searchCopart(String searchItem) {
@@ -36,23 +43,33 @@ public class HomePage {
         return popularSearch;
     }
 
-    public void goToListOfMakesModels (List<WebElement> popularMakesModels) throws Exception {
-        try
-        {
-            for (WebElement model : popularMakesModels) {
-                model.getAttribute("href");
-                driver.get(String.valueOf(model));
+    public Map<String, String> getListOfMakeModelsUrls(List<WebElement> popularSearch) {
+        Map<String, String> modelUrls = new HashMap<>();
+        for (WebElement modelUrl : popularSearch) {
+            modelUrls.put(modelUrl.getText(), modelUrl.getAttribute("href"));
 
-                wait.until(ExpectedConditions.visibilityOfElementLocated(tableContainer));
-                WebElement modelText = driver.findElement(lotSearchModel);
-                wait.until(ExpectedConditions.textToBePresentInElement(modelText, model.getText()));
+            for (String url : modelUrls.values()) {
+                driver.get(url);
             }
         }
-        catch (Exception e) {
-            System.out.println("Did not make it to " + StringUtils.capitalize(popularMakesModels) + "s. Check out the screenshot!");
-            takeScreenshot(driver, "C:\\Users\\Vern Kofford\\Desktop\\STGcert\\src\\test\\java\\challenge\\challenge7.screenShots\\seleniumError"+System.currentTimeMillis()+".png");
-        }
+
+        return modelUrls;
     }
+
+
+//    public void goToListOfMakesModels (Map<String, String> modelUrls) throws Exception {
+//        try
+//        {
+//            for (String modelUrl : modelUrls.values()) {
+//                driver.get(modelUrl);
+//            }
+//        }
+//        catch (Exception e) {
+//            System.out.println("Did not make it to "+ modelUrls.values() + "s. Check out the screenshot!");
+//            TakeScreenshots takeScreenshots = new TakeScreenshots(driver);
+//            takeScreenshots.takeScreenshot("C:\\Users\\Vern Kofford\\Desktop\\STGcert\\src\\test\\java\\challenge7\\challenge7.screenShots\\seleniumError"+System.currentTimeMillis()+".png");
+//        }
+//    }
 
     public void printMakesModels(List<WebElement> popularSearch) throws Exception {
         for (WebElement model : popularSearch) {
@@ -60,9 +77,8 @@ public class HomePage {
         }
     }
 
-    public List<WebElement> getListOfCategories() throws Exception {
-        /*List<WebElement> categoriesList = driver.findElements(By.cssSelector("ul[class*='tabs-left']"));*/
-        List<WebElement> categoriesList = driver.findElements(By.xpath("//*[@id=\"tabTrending\"]/div[3]/div[1]/ul/li > a"));
+    public List<WebElement> getListOfCategories() {
+        List<WebElement> categoriesList = driver.findElements(popularCategoryList);
         return categoriesList;
     }
 

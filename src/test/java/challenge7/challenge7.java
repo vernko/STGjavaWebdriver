@@ -11,6 +11,6 @@ public class challenge7 extends BaseTests {
 
     @Test()
     public void verifyMakeModelLinksWork() throws Exception {
-        homePage.goToListOfMakesModels(homePage.getListOfMakesModels());
+        homePage.getListOfMakeModelsUrls(homePage.getListOfMakesModels());
     }
 }

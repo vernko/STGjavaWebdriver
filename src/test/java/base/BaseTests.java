@@ -2,7 +2,6 @@ package base;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +16,7 @@ public class BaseTests {
     public WebDriver driver;
     public WebDriverWait wait;
     protected HomePage homePage;
+    protected TakeScreenshots takeScreenshots;
 
     @BeforeClass
     public void setUp(){
@@ -28,6 +28,8 @@ public class BaseTests {
         driver.get("https://www.copart.com");
 
         homePage = new HomePage(driver, wait);
+        takeScreenshots = new TakeScreenshots(driver);
+
     }
 
     @AfterClass

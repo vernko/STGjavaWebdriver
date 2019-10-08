@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f05f036-e238-434d-b9c2-0301cce139b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TakeScreenshots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge2/challenge2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge3/challenge3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge5/challenge5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/challenge6/challenge6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge6/challenge6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/challenge7/challenge7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/challenge7/challenge7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/SearchResultsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge2/challenge2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge3/challenge3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/challenge5/challenge5.class" afterDir="false" />
@@ -60,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.challenge6">
+  <component name="RunManager" selected="TestNG.challenge3">
     <configuration name="challenge2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="STGcert" />
       <extension name="coverage">
@@ -148,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.challenge3" />
+        <item itemvalue="TestNG.challenge7" />
         <item itemvalue="TestNG.challenge6" />
         <item itemvalue="TestNG.challenge5" />
-        <item itemvalue="TestNG.challenge3" />
         <item itemvalue="TestNG.challenge2" />
-        <item itemvalue="TestNG.challenge7" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +173,16 @@
       <updated>1566416565723</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
